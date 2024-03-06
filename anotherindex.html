@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(50, 127, 156);
+            
+        }
+
+        .container {
+            text-align: center;
+            text-emphasis-color: aqua;
+            color: rgb(189, 220, 239);
+            border: 0.75px solid rgb(10, 0, 72); /* Border with thickness 0.5px */
+            padding: 20px; /* Optional: Add padding for better appearance */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lung Cancer Prediction</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="file" id="fileInput">
+            <button type="button" onclick="predict()">Predict</button>
+        </form>
+        <div id="predictionResult" style="display: none;">
+            <h2>Prediction Result</h2>
+            <p id="predictedClass"></p>
+            <p id="confidence"></p>
+        </div>
+    </div>
+    <script>
+        function predict() {
+            var formData = new FormData();
+            var fileInput = document.getElementById('fileInput').files[0];
+            formData.append('file', fileInput);
+
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('predictedClass').innerText = 'Predicted Class: ' + data.predicted_class;
+                document.getElementById('confidence').innerText = 'Confidence: ' + (data.confidence * 100).toFixed(2) + '%';
+                document.getElementById('predictionResult').style.display = 'block';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
