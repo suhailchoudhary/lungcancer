@@ -1,9 +1,14 @@
 # lungcancer
 Lung cancer detection using Convultional neural network
 Breif description: The lung cancer is caused in more than 80% people because of smoking , it harms the cell of lung 
-it has three category -> Adenocarcinoma (ACA) cell: most common type about 50% people , due to both smoking and non-smoking  and spread slowly in the outer region cells.
-                      -> Squamous Cell Carcinoma (SCC): about 25-30% people suffering because of this and mainly caused due the smoking only, spread faster than aca in the inner region.
-                      -> Normal cell: the lung cells aren't associated with cancer.
+it has three category 
+-> Adenocarcinoma (ACA) cell: most common type about 50% people , due to both smoking and non-smoking  and spread slowly in the outer region cells.
+![lungaca1](https://github.com/suhailchoudhary/lungcancer/assets/146436040/8132deb5-4e0a-4db5-8912-c871ff5a28fb)
+ -> Squamous Cell Carcinoma (SCC): about 25-30% people suffering because of this and mainly caused due the smoking only, spread faster than aca in the inner region.
+![lungscc1](https://github.com/suhailchoudhary/lungcancer/assets/146436040/b52c0919-903e-4018-815f-73d113082f75)
+-> Normal cell: the lung cells aren't associated with cancer.
+![lungn1](https://github.com/suhailchoudhary/lungcancer/assets/146436040/8a84addf-9468-498f-9782-90abde0fe844)
+
 Why 3 category ?
  because if a person consumes the drugs associated with scc or aca that is cross intake of medicine , that can lead to very harmful effect on human being.
 You can use the this sourcecode to create the model for detecting the cancerous cell in the lung 
@@ -20,5 +25,6 @@ Steps:
 10. now use the command in cmd "python app.py"
 11. use the server link to open the webapp.
 12. now upload the image from the dataset and check the result.
-Hence, you have successfully run the model for lung cancer detction using CNN.
+Hence, you have successfully run the model .
+for lung cancer detction using CNN.
 for any help u can contact me "suhailchoudhary41@gmail.com"
